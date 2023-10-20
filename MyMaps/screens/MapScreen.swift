@@ -9,9 +9,12 @@ import SwiftUI
 import MapKit
 
 struct MapScreen: View {
+    
+    @EnvironmentObject private var appState: AppState
+    
     var body: some View {
-        MapView()
-    } //: body 
+        MapView(annotations: self.appState.places)
+    } //: body
 }
 
 #Preview {
