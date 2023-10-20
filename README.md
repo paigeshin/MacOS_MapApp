@@ -1136,3 +1136,156 @@ final class MapViewCoordinator: NSObject, MKMapViewDelegate {
 
 
 ```
+
+### Make Your Own Window Preferences
+
+```swift
+import SwiftUI
+
+@main
+struct MyMapsApp: App {
+    var body: some Scene {
+        WindowGroup {
+            let appState = AppState()
+            HomeScreen()
+                .frame(minWidth: 1280, minHeight: 720)
+                .environmentObject(appState)
+        }
+        .commands {
+            CommandGroup(after: .appInfo) {
+                Button("Preferences") {
+                    PreferencesScreen()
+                        .openInWindow(title: "Preferences", sender: self)
+                }
+            }
+        }
+    }
+}
+
+extension View {
+ 
+    @discardableResult
+    func openInWindow(title: String, sender: Any?) -> NSWindow {
+        let controller = NSHostingController(rootView: self)
+        let window = NSWindow(contentViewController: controller)
+        window.contentViewController = controller
+        window.title = title
+        window.makeKeyAndOrderFront(sender)
+        return window
+    }
+    
+}
+
+```
+
+### Save Enum on AppStorage
+
+```swift
+
+enum DistanceUnit: String, Codable, CaseIterable {
+    case miles
+    case kilometers
+}
+
+```
+
+
+```swift
+
+    @AppStorage("distanceUnit") var distanceunit = DistanceUnit.miles
+
+```
+
+### DistanceFormatter
+
+```swift
+
+import Foundation
+import CoreLocation
+
+final class DistanceFormatter {
+    
+    var unitOptions: DistanceUnit = .miles
+    
+    func format(distanceInMeters: Double) -> String {
+        switch self.unitOptions {
+        case .miles:
+            return self.formatForMiles(distanceInMeters: distanceInMeters)
+        case .kilometers:
+            return self.formatForKms(distanceInMeters: distanceInMeters)
+        }
+    }
+    
+    private func formatForMiles(distanceInMeters: Double) -> String {
+        switch distanceInMeters {
+        case 0...182: return distanceInMeters.toFeet().displayDistance(.feet)
+        case 183...: return distanceInMeters.toMiles().displayDistance(.miles)
+        default: return distanceInMeters.toFeet().displayDistance(.feet)
+        }
+    }
+    
+    private func formatForKms(distanceInMeters: Double) -> String {
+        switch distanceInMeters {
+        case 0...900: return distanceInMeters.toMeters().displayDistance(.meters)
+        case 901...: return distanceInMeters.toKms().displayDistance(.kilometers)
+        default: return distanceInMeters.toMeters().displayDistance(.meters)
+        }
+    }
+    
+}
+
+enum DisplayDistanceUnit {
+    case feet
+    case meters
+    case miles
+    case kilometers
+}
+
+extension Measurement where UnitType: UnitLength {
+    
+    func displayDistance(_ unit: DisplayDistanceUnit) -> String {
+        let formatter = MeasurementFormatter()
+        formatter.unitOptions = .providedUnit
+        switch unit {
+        case .feet, .meters:
+            formatter.numberFormatter.maximumFractionDigits = 0
+        case .miles, .kilometers:
+            formatter.numberFormatter.maximumFractionDigits = 1
+        }
+        return formatter.string(from: self)
+    }
+    
+//    var distanceToDisplay: String {
+//        let formatter = MeasurementFormatter()
+//        formatter.unitOptions = .providedUnit
+//        formatter.numberFormatter.maximumFractionDigits = 0
+//        return formatter.string(from: self)
+//    }
+    
+}
+
+extension CLLocationDistance {
+    
+    func toFeet() -> Measurement<UnitLength> {
+        let valueInMeters = Measurement(value: self, unit: UnitLength.meters)
+        return valueInMeters.converted(to: .feet)
+    }
+    
+    func toMeters() -> Measurement<UnitLength> {
+        let valueInMeters = Measurement(value: self, unit: UnitLength.meters)
+        return valueInMeters.converted(to: .meters)
+    }
+    
+    func toMiles() -> Measurement<UnitLength> {
+        let valueInMeters = Measurement(value: self, unit: UnitLength.meters)
+        return valueInMeters.converted(to: .miles)
+    }
+    
+    func toKms() -> Measurement<UnitLength> {
+        let valueInMeters = Measurement(value: self, unit: UnitLength.meters)
+        return valueInMeters.converted(to: .kilometers)
+    }
+    
+}
+
+```

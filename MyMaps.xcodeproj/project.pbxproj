@@ -25,6 +25,9 @@
 		C4297E152AE29AE900FB539C /* RoutePopOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4297E142AE29AE900FB539C /* RoutePopOver.swift */; };
 		C4297E172AE29D4A00FB539C /* RouteCallOutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4297E162AE29D4A00FB539C /* RouteCallOutView.swift */; };
 		C4297E192AE29FC500FB539C /* RouteContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4297E182AE29FC500FB539C /* RouteContentViewController.swift */; };
+		C4297E1B2AE33A1C00FB539C /* PreferencesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4297E1A2AE33A1C00FB539C /* PreferencesScreen.swift */; };
+		C4297E1E2AE33B6200FB539C /* DistanceUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4297E1D2AE33B6200FB539C /* DistanceUnit.swift */; };
+		C4297E212AE33D2600FB539C /* DistanceFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4297E202AE33D2600FB539C /* DistanceFormatter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +53,9 @@
 		C4297E142AE29AE900FB539C /* RoutePopOver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutePopOver.swift; sourceTree = "<group>"; };
 		C4297E162AE29D4A00FB539C /* RouteCallOutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteCallOutView.swift; sourceTree = "<group>"; };
 		C4297E182AE29FC500FB539C /* RouteContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteContentViewController.swift; sourceTree = "<group>"; };
+		C4297E1A2AE33A1C00FB539C /* PreferencesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesScreen.swift; sourceTree = "<group>"; };
+		C4297E1D2AE33B6200FB539C /* DistanceUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceUnit.swift; sourceTree = "<group>"; };
+		C4297E202AE33D2600FB539C /* DistanceFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceFormatter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +90,8 @@
 		C4297DE52AE2776900FB539C /* MyMaps */ = {
 			isa = PBXGroup;
 			children = (
+				C4297E1F2AE33D1100FB539C /* formatters */,
+				C4297E1C2AE33B5900FB539C /* models */,
 				C4297E0F2AE284F200FB539C /* global */,
 				C4297E0C2AE2830400FB539C /* annotations */,
 				C4297E092AE2817500FB539C /* viewmodels */,
@@ -113,6 +121,7 @@
 				C4297DF72AE2784700FB539C /* HomeScreen.swift */,
 				C4297DF92AE2787100FB539C /* SideBar.swift */,
 				C4297DFB2AE2787600FB539C /* MapScreen.swift */,
+				C4297E1A2AE33A1C00FB539C /* PreferencesScreen.swift */,
 			);
 			path = screens;
 			sourceTree = "<group>";
@@ -169,6 +178,22 @@
 				C4297E102AE284FB00FB539C /* AppState.swift */,
 			);
 			path = global;
+			sourceTree = "<group>";
+		};
+		C4297E1C2AE33B5900FB539C /* models */ = {
+			isa = PBXGroup;
+			children = (
+				C4297E1D2AE33B6200FB539C /* DistanceUnit.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		C4297E1F2AE33D1100FB539C /* formatters */ = {
+			isa = PBXGroup;
+			children = (
+				C4297E202AE33D2600FB539C /* DistanceFormatter.swift */,
+			);
+			path = formatters;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,16 +268,19 @@
 			files = (
 				C4297E172AE29D4A00FB539C /* RouteCallOutView.swift in Sources */,
 				C4297DE92AE2776900FB539C /* ContentView.swift in Sources */,
+				C4297E1E2AE33B6200FB539C /* DistanceUnit.swift in Sources */,
 				C4297E082AE2810500FB539C /* SearchResultList.swift in Sources */,
 				C4297E132AE290F000FB539C /* PlaceCalloutView.swift in Sources */,
 				C4297E192AE29FC500FB539C /* RouteContentViewController.swift in Sources */,
 				C4297E0E2AE2831000FB539C /* PlaceAnnotation.swift in Sources */,
 				C4297E112AE284FB00FB539C /* AppState.swift in Sources */,
 				C4297DFF2AE27B9F00FB539C /* MapView.swift in Sources */,
+				C4297E1B2AE33A1C00FB539C /* PreferencesScreen.swift in Sources */,
 				C4297E022AE27D5400FB539C /* MapViewCoordinator.swift in Sources */,
 				C4297DE72AE2776900FB539C /* MyMapsApp.swift in Sources */,
 				C4297E062AE27EE700FB539C /* LocationManager.swift in Sources */,
 				C4297E152AE29AE900FB539C /* RoutePopOver.swift in Sources */,
+				C4297E212AE33D2600FB539C /* DistanceFormatter.swift in Sources */,
 				C4297DFA2AE2787100FB539C /* SideBar.swift in Sources */,
 				C4297DF82AE2784700FB539C /* HomeScreen.swift in Sources */,
 				C4297DFC2AE2787600FB539C /* MapScreen.swift in Sources */,

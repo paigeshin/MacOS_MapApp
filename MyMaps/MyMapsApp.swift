@@ -16,5 +16,27 @@ struct MyMapsApp: App {
                 .frame(minWidth: 1280, minHeight: 720)
                 .environmentObject(appState)
         }
+        .commands {
+            CommandGroup(after: .appInfo) {
+                Button("Preferences") {
+                    PreferencesScreen()
+                        .openInWindow(title: "Preferences", sender: self)
+                }
+            }
+        }
     }
+}
+
+extension View {
+ 
+    @discardableResult
+    func openInWindow(title: String, sender: Any?) -> NSWindow {
+        let controller = NSHostingController(rootView: self)
+        let window = NSWindow(contentViewController: controller)
+        window.contentViewController = controller
+        window.title = title
+        window.makeKeyAndOrderFront(sender)
+        return window
+    }
+    
 }
