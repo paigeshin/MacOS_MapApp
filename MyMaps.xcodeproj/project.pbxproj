@@ -22,6 +22,9 @@
 		C4297E0E2AE2831000FB539C /* PlaceAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4297E0D2AE2831000FB539C /* PlaceAnnotation.swift */; };
 		C4297E112AE284FB00FB539C /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4297E102AE284FB00FB539C /* AppState.swift */; };
 		C4297E132AE290F000FB539C /* PlaceCalloutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4297E122AE290F000FB539C /* PlaceCalloutView.swift */; };
+		C4297E152AE29AE900FB539C /* RoutePopOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4297E142AE29AE900FB539C /* RoutePopOver.swift */; };
+		C4297E172AE29D4A00FB539C /* RouteCallOutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4297E162AE29D4A00FB539C /* RouteCallOutView.swift */; };
+		C4297E192AE29FC500FB539C /* RouteContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4297E182AE29FC500FB539C /* RouteContentViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +47,9 @@
 		C4297E0D2AE2831000FB539C /* PlaceAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceAnnotation.swift; sourceTree = "<group>"; };
 		C4297E102AE284FB00FB539C /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		C4297E122AE290F000FB539C /* PlaceCalloutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceCalloutView.swift; sourceTree = "<group>"; };
+		C4297E142AE29AE900FB539C /* RoutePopOver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutePopOver.swift; sourceTree = "<group>"; };
+		C4297E162AE29D4A00FB539C /* RouteCallOutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteCallOutView.swift; sourceTree = "<group>"; };
+		C4297E182AE29FC500FB539C /* RouteContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouteContentViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +132,9 @@
 				C4297DFE2AE27B9F00FB539C /* MapView.swift */,
 				C4297E012AE27D5400FB539C /* MapViewCoordinator.swift */,
 				C4297E122AE290F000FB539C /* PlaceCalloutView.swift */,
+				C4297E182AE29FC500FB539C /* RouteContentViewController.swift */,
+				C4297E142AE29AE900FB539C /* RoutePopOver.swift */,
+				C4297E162AE29D4A00FB539C /* RouteCallOutView.swift */,
 			);
 			path = "map-view";
 			sourceTree = "<group>";
@@ -232,15 +241,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4297E172AE29D4A00FB539C /* RouteCallOutView.swift in Sources */,
 				C4297DE92AE2776900FB539C /* ContentView.swift in Sources */,
 				C4297E082AE2810500FB539C /* SearchResultList.swift in Sources */,
 				C4297E132AE290F000FB539C /* PlaceCalloutView.swift in Sources */,
+				C4297E192AE29FC500FB539C /* RouteContentViewController.swift in Sources */,
 				C4297E0E2AE2831000FB539C /* PlaceAnnotation.swift in Sources */,
 				C4297E112AE284FB00FB539C /* AppState.swift in Sources */,
 				C4297DFF2AE27B9F00FB539C /* MapView.swift in Sources */,
 				C4297E022AE27D5400FB539C /* MapViewCoordinator.swift in Sources */,
 				C4297DE72AE2776900FB539C /* MyMapsApp.swift in Sources */,
 				C4297E062AE27EE700FB539C /* LocationManager.swift in Sources */,
+				C4297E152AE29AE900FB539C /* RoutePopOver.swift in Sources */,
 				C4297DFA2AE2787100FB539C /* SideBar.swift in Sources */,
 				C4297DF82AE2784700FB539C /* HomeScreen.swift in Sources */,
 				C4297DFC2AE2787600FB539C /* MapScreen.swift in Sources */,

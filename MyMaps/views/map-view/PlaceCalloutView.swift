@@ -13,13 +13,22 @@ final class PlaceCallOutView: NSView {
     
     private var annotation: PlaceAnnotation
     
+    private var selectShowDirections: (PlaceAnnotation) -> Void
+    
     private lazy var directionButton: NSButton = {
         let button = NSButton(frame: NSRect(x: 0, y: 0, width: 100, height: 100))
         button.title = "Get Directions"
         button.wantsLayer = true
         button.isBordered = false
+        button.target = self
+        button.action = #selector(self.handleShowDirection)
         return button
     }()
+    
+    @objc
+    private func handleShowDirection() {
+        self.selectShowDirections(self.annotation)
+    }
     
     private lazy var phoneTextField: NSTextField = {
         let textField = NSTextField(frame: CGRect(x: 0, y: 0, width: 100, height: 60))
@@ -39,9 +48,11 @@ final class PlaceCallOutView: NSView {
     
     init(
         annotation: PlaceAnnotation,
+        selectShowDirections: @escaping(PlaceAnnotation) -> Void,
         frame: CGRect = CGRect(x: 0, y: 0, width: 400, height: 400)
     ) {
         self.annotation = annotation
+        self.selectShowDirections = selectShowDirections
         super.init(frame: frame)
         self.configure()
     }
