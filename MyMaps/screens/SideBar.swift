@@ -15,7 +15,13 @@ struct SideBar: View {
     
     var body: some View {
         VStack {
-            SearchResultList(places: self.appState.places)
+            SearchResultList(
+                places: self.appState.places,
+                onSelect: { place in
+                    self.appState.selectedPlace = place
+                    print(place)
+                }
+            )
         } //: VStack
         .searchable(
             text: self.$search,
@@ -33,4 +39,5 @@ struct SideBar: View {
 
 #Preview {
     SideBar()
+        .environmentObject(AppState())
 }

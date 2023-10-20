@@ -21,6 +21,7 @@
 		C4297E0B2AE2818600FB539C /* SearchResultsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4297E0A2AE2818600FB539C /* SearchResultsViewModel.swift */; };
 		C4297E0E2AE2831000FB539C /* PlaceAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4297E0D2AE2831000FB539C /* PlaceAnnotation.swift */; };
 		C4297E112AE284FB00FB539C /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4297E102AE284FB00FB539C /* AppState.swift */; };
+		C4297E132AE290F000FB539C /* PlaceCalloutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4297E122AE290F000FB539C /* PlaceCalloutView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		C4297E0A2AE2818600FB539C /* SearchResultsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewModel.swift; sourceTree = "<group>"; };
 		C4297E0D2AE2831000FB539C /* PlaceAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceAnnotation.swift; sourceTree = "<group>"; };
 		C4297E102AE284FB00FB539C /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		C4297E122AE290F000FB539C /* PlaceCalloutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceCalloutView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 			children = (
 				C4297DFE2AE27B9F00FB539C /* MapView.swift */,
 				C4297E012AE27D5400FB539C /* MapViewCoordinator.swift */,
+				C4297E122AE290F000FB539C /* PlaceCalloutView.swift */,
 			);
 			path = "map-view";
 			sourceTree = "<group>";
@@ -231,6 +234,7 @@
 			files = (
 				C4297DE92AE2776900FB539C /* ContentView.swift in Sources */,
 				C4297E082AE2810500FB539C /* SearchResultList.swift in Sources */,
+				C4297E132AE290F000FB539C /* PlaceCalloutView.swift in Sources */,
 				C4297E0E2AE2831000FB539C /* PlaceAnnotation.swift in Sources */,
 				C4297E112AE284FB00FB539C /* AppState.swift in Sources */,
 				C4297DFF2AE27B9F00FB539C /* MapView.swift in Sources */,

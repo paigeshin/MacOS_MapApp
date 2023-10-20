@@ -13,7 +13,10 @@ struct MapScreen: View {
     @EnvironmentObject private var appState: AppState
     
     var body: some View {
-        MapView(annotations: self.appState.places)
+        MapView(
+            annotations: self.appState.places,
+            selectedPlace: self.appState.selectedPlace
+        )
     } //: body
 }
 
